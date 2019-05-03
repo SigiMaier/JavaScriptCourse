@@ -688,11 +688,171 @@ var checkPastLimitSimplified = function(limiter) {
 var arr5 = mapForEach(arr1, checkPastLimitSimplified(1));
 console.log(arr5);*/
 
-var arr1 = [1,2,3];
+/*var arr1 = [1,2,3];
 
 var arr6 = _.map(arr1, function(item) {return item * 3});
 
 console.log(arr6);
 
 var arr7 = _.filter([2,3,4,5,6,7], function(item) {return item % 2 ===0;});
-console.log(arr7);
+console.log(arr7);*/
+
+
+
+
+
+
+
+
+
+
+/*var person = {
+    firstname: "Default",
+    lastname: "Default",
+    getFullName: function() {
+        return this.firstname + " " + this.lastname;
+    }
+};
+
+var john = {
+    firstname: "John",
+    lastname: "Doe"
+};
+
+// don´t do this EVER! for demo purposes only!!!
+john.__proto__ = person;
+
+console.log(john.getFullName());
+console.log(john.firstname);
+
+var jane = {
+    firstname: "Jane"
+};
+
+jane.__proto__ = person;
+
+console.log(jane.getFullName());*/
+
+/*for (var prop in john) {
+    
+    if (john.hasOwnProperty(prop)){
+        console.log(prop + ': ' + john[prop]);
+    }
+}
+
+var jane = {
+    address: "111 Main St.",
+    getFormalFullName: function() {
+        return this.lastname + ', ' + this.firstname;
+    }
+}
+
+var jim = {
+    getFirstName: function() {
+        return firstname;
+    }
+}
+
+_.extend(john, jane, jim);
+
+console.log(john);*/
+
+
+
+
+/*function Person(firstname, lastname) {
+    console.log(this);
+    this.firstname = firstname;
+    this.lastname = lastname;
+    console.log("this function is invoked.");
+}
+
+
+Person.prototype.getFullName = function() {
+    return this.firstname + " " + this.lastname;
+}
+
+var john = new Person("john", "doe");
+
+console.log(john);
+
+
+var jane = new Person("jane", "doe");
+
+console.log(jane);
+
+Person.prototype.getFormalFullName = function() {
+    return this.lastname + ", " + this.firstname;
+}
+
+console.log(john.getFormalFullName());*/
+
+
+/*String.prototype.isLengthGreaterThan = function(limit) {
+    return this.length > limit;
+}
+
+console.log("John".isLengthGreaterThan(3));
+
+Number.prototype.isPosoitive = function() {
+    return this > 0;
+}*/
+
+/*Array.prototype.myCustomFeature = "cool!";
+
+var arr = ["john", "jane", "jim"];
+
+for (var prop in arr) {
+    console.log(prop + ": " + arr[prop]);
+}
+
+// For arrays is safer to use a standard for loop instead of forin for looping over the items, since the added items to an array are properties for arrays since arrays are objects
+
+for (var i = 0; i < arr.length; i++) {
+    console.log(i + ": " + arr[i]);
+}
+*/
+
+
+
+// Using the PolyFill: Adding functionality of JavaScript to Browserengines that might lack the feature. 
+/*if (!Object.create) {
+    Object.create = function(o) {
+        if (arguments.length > 1) {
+            throw new Error('Object.create implementation only accepts the first parameter.');
+        }
+        
+        function F() {}
+        F.prototype = o;
+        return new F();
+    };
+}
+
+
+
+var person = {
+    firstname: "default",
+    lastname: "default",
+    greet: function() {
+        return "Hi " + this.firstname;
+    }
+}
+
+
+var john = Object.create(person);
+john.firstname = "John";
+john.lastname = "Doe";
+console.log(john);*/
+
+// to use strict mode
+/*"use strict";
+
+var person;
+
+persom = {};
+
+console.log(persom);*/
+
+
+var q = $("ul.people li");
+console.log(q);
