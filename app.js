@@ -360,7 +360,7 @@ greet('John');
 greet('John', 'Moe', 'ES');
 */
 
-function greet(firstname, lastname, language) {
+/*function greet(firstname, lastname, language) {
     language = language || 'en';
     
     if (language === 'en') {
@@ -384,4 +384,315 @@ greet("First", "Last", "en");
 greet("First", "Last", "es");
 
 greetEnglish("First", "Last");
-greetSpanish("First", "Last");
+greetSpanish("First", "Last");*/
+
+/*function getPerson() {
+    
+    return {
+        firstName: 'Tony'
+    }
+}
+
+console.log(getPerson());*/
+
+/*var 
+    // first name of the person
+    firstname,
+    
+    // last name of the person
+    lastname,
+    
+    // the language
+    // can be 'en' or 'es'
+    laguage;
+
+var person = {
+    
+    firstname: 'John',
+    lastname: 'Doe'
+}
+
+console.log(person);*/
+
+
+// function statement
+/*function greet(name) {
+    console.log('Hello ' + name);
+}
+
+greet('John');
+
+
+// using a function expression
+var greetFunc = function(name) {
+    console.log('Hello ' + name);
+}
+
+greetFunc('John');
+
+// using an Immediately Invoked Function Expression (IIFE)
+var greeting = function(name) {
+   
+    return 'Hello ' + name;
+    
+}('John');
+
+console.log(greeting);*/
+
+
+/*var firstname = 'John';
+
+(function(name) {
+    
+    var greeting = 'Inside IIFE: hello';
+    
+    console.log(greeting + ' ' + name);
+})(firstname); // IIFE
+
+console.log(greeting);*/
+
+/*(function(global, name) {
+    
+    var greeting = 'Hello';
+    global.greeting = 'Hello';
+    console.log(greeting + " " + name);
+}(window, 'John'));
+
+console.log(greeting);*/
+
+/*function greet(whattosay) {
+    
+    return function(name) {
+        console.log(whattosay + " " + name);
+    }
+}
+
+//greet('Hi')('Tony');
+
+var sayHi = greet('Hi');
+sayHi('Tony');*/
+
+/*function buildFunctions() {
+    
+    var arr = [];
+    
+    for (var i = 0; i < 3; i++) {
+        
+        arr.push(
+        function() {
+            console.log(i);
+        });
+    }
+    
+    return arr;
+}
+
+var fs = buildFunctions();
+
+fs[0]();
+fs[1]();
+fs[2]();
+
+function buildFuncionts2() {
+    
+    var arr = [];
+    
+    for (var i = 0; i < 3; i++) {
+        //let j = i; ES6
+        arr.push(
+            (function(j) {
+               return function() {
+                   console.log(j);
+               }
+            }(i)))
+    }
+    
+    return arr;
+}
+
+var fs2 = buildFuncionts2();
+
+fs2[0]();
+fs2[1]();
+fs2[2]();*/
+
+
+/*function makeGreeting(language) {
+    
+    return function(firstname, lastname) {
+        
+        if (language === "en") {
+            console.log("Hello " + firstname + " " + lastname);
+        }
+        
+        if (language === "es") {
+            console.log("Hola " + firstname + " " + lastname);
+        }
+    }
+}
+
+var greetEnglish = makeGreeting("en");
+var greetSpanish = makeGreeting("es");
+
+greetEnglish("John", "Doe");
+greetSpanish("John", "Doe");*/
+
+/*function sayHiLater() {
+    
+    var greeting = "Hi!";
+    
+    setTimeout(function() {
+        console.log(greeting);
+    }, 3000);
+}
+
+sayHiLater();
+
+// jQuery uses function expressions and first-class functions!
+//$("button").click(function() {
+//    
+//});
+
+function tellMeWhenDone(callback) {
+    
+    var a = 1000; // some work
+    var b = 2000; // some work
+    
+    callback(); // the "callback", it runs the function I give it!
+}
+
+tellMeWhenDone(function() {
+    
+    console.log("I am done!");
+});
+
+tellMeWhenDone(function() {
+    
+    alert("I am done!");
+});
+
+tellMeWhenDone(function() {
+    
+    console.log("All done...");
+})*/
+
+
+/*var person = {
+    firstname: "John",
+    lastname: "Doe",
+    getFullName: function() {
+        
+        var fullname = this.firstname + " " + this.lastname;
+        return fullname;
+    }
+}
+
+var logName = function(lang1, lang2) {
+    
+    console.log("Logged: " + this.getFullName());
+    console.log("Arguments: " + lang1 + " " + lang2);
+    console.log("............");
+}
+
+var logPersonName = logName.bind(person);
+
+logPersonName("en");
+
+logName.call(person, "en", "es");
+logName.apply(person, ["en", "es"]);
+
+(function(lang1, lang2) {
+    
+    console.log("Logged: " + this.getFullName());
+    console.log("Arguments: " + lang1 + " " + lang2);
+    console.log("............");
+}).apply(person, ["en", "es"]);
+
+(function(lang1, lang2) {
+    
+    console.log("Logged: " + this.getFullName());
+    console.log("Arguments: " + lang1 + " " + lang2);
+    console.log("............");
+}).call(person, "en", "es");
+
+
+// function borrowing
+var person2 = {
+    
+    firstname: "Jane",
+    lastname: "Doe"
+}
+
+console.log(person.getFullName.apply(person2));
+
+// function currying
+function mulitply(a, b) {
+    
+    return a*b;
+}
+
+var multiplyByTwo = mulitply.bind(this, 2);
+
+console.log(multiplyByTwo(3));
+
+var multiplyByThree = mulitply.bind(this, 3);
+
+console.log(multiplyByThree(3));
+*/
+
+/*function mapForEach(arr, fn) {
+    
+    var newArr = [];
+    
+    for (var i=0; i <  arr.length; i++) {
+        
+        newArr.push(
+            fn(arr[i])
+        )
+    };
+    
+    return newArr;
+}
+
+
+var arr1 = [1,2,3];
+
+console.log(arr1);
+
+var arr2 = mapForEach(arr1, function(item) {
+    return item * 2;
+})
+
+var arr3 = mapForEach(arr1, function(item) {
+    return item > 2;
+})
+
+console.log(arr2);
+console.log(arr3);
+
+
+var checkPastLimit = function(limiter, item) {
+    return item > limiter;
+}
+
+var arr4 = mapForEach(arr1, checkPastLimit.bind(this, 1));
+
+console.log(arr4);
+
+var checkPastLimitSimplified = function(limiter) {
+    return function(limiter, item) {
+        return item > limiter;
+    }.bind(this, limiter);
+};
+
+var arr5 = mapForEach(arr1, checkPastLimitSimplified(1));
+console.log(arr5);*/
+
+var arr1 = [1,2,3];
+
+var arr6 = _.map(arr1, function(item) {return item * 3});
+
+console.log(arr6);
+
+var arr7 = _.filter([2,3,4,5,6,7], function(item) {return item % 2 ===0;});
+console.log(arr7);
